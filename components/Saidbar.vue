@@ -2,7 +2,6 @@
   <v-app dark>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
       app
@@ -31,9 +30,9 @@
     >
       <v-btn
         icon
-        @click.stop="miniVariant = !miniVariant"
+        @click.stop="drawer = !drawer"
       >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
+        <v-icon>mdi-menu</v-icon>
       </v-btn>
       <v-toolbar-title>
         {{ title }}
@@ -61,7 +60,7 @@ export default {
   data() {
     return {
       clipped: false,
-      drawer: true,
+      drawer: null,
       items: [
         {
           icon: 'mdi-home-analytics',
@@ -99,7 +98,6 @@ export default {
           to: '/albums'
         },
       ],
-      miniVariant: false,
       title: 'Valijon Mizrofov'
     }
   },

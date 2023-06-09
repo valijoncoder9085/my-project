@@ -27,7 +27,7 @@ import {mapGetters} from "vuex";
 export default {
   data(){
     return{
-      text: "Alybums",
+      text: "Albums",
       headers: [
         {text: "Title", value: "title",sortable: false},
         {text: "User Id", value: "userId",sortable: false},

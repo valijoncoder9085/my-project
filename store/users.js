@@ -38,7 +38,6 @@ export const mutations = {
 }
 
 export const actions = {
-  // GET ALBUMS
   async getAlbums({commit}) {
     await this.$axios.get('/albums')
       .then(res => {
@@ -50,12 +49,10 @@ export const actions = {
         console.log(response)
       })
   },
-  // GET PHOTOS
   async getPhotos({commit}) {
-    await this.$axios.get("/photos")
+    await this.$axios.get("/photos?_limit=100")
       .then(res => {
         if (res.status === 200) {
-          console.log(res)
           commit("setPhotos", res.data)
         }
       })
@@ -63,7 +60,6 @@ export const actions = {
         console.log(response)
       })
   },
-  // GET TODOS
   async getTodos({commit}) {
     await this.$axios.get("/todos")
       .then(res => {
@@ -75,7 +71,6 @@ export const actions = {
         console.log(response)
       })
   },
-  // GET COMMENTS
   async getComments({commit}) {
     await this.$axios.get("/comments")
       .then(res => {
@@ -87,7 +82,6 @@ export const actions = {
         console.log(response)
       })
   },
-  // POST USER
   async postUser({commit}) {
     await this.$axios.get('/posts')
       .then(res => {
@@ -99,7 +93,6 @@ export const actions = {
         console.log(response)
       })
   },
-  // GET USER
   async getUserData({commit}) {
     await this.$axios.get('/users')
       .then(res => {
